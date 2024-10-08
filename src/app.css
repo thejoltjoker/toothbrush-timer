@@ -3,7 +3,36 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+	:root {
+		background-color: Canvas;
+		color: CanvasText;
+		color-scheme: light dark;
+
+		--color-progress: theme('colors.sky.500');
+		--color-progress-highlight: theme('colors.sky.300');
+		--color-progress-shadow: theme('colors.blue.900');
+		--color-circle: theme('colors.slate.300');
+		--color-circle-shadow: theme('colors.gray.400');
+		--color-circle-highlight: theme('colors.white');
+		--color-bg: theme('colors.slate.100');
+		--color-text: theme('colors.slate.900');
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:where(body) {
+			--color-progress: theme('colors.sky.500');
+			--color-progress-highlight: theme('colors.sky.300');
+			--color-progress-shadow: theme('colors.blue.900');
+			--color-circle: theme('colors.slate.700');
+			--color-circle-shadow: theme('colors.gray.800');
+			--color-circle-highlight: theme('colors.slate.500');
+			--color-bg: theme('colors.gray.900');
+			--color-text: theme('colors.gray.50');
+		}
+	}
+
 	body {
-		@apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50;
+		background: var(--color-bg);
+		color: var(--color-text);
 	}
 }
