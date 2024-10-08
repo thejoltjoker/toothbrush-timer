@@ -1,7 +1,7 @@
 <script lang="ts">
 	let count: number = 0;
 	let isFinished: boolean = false;
-	let duration: number = 10;
+	let duration: number = 120;
 	setInterval(() => {
 		if (count < duration) {
 			count += 0.05;
